@@ -44,3 +44,14 @@
 - Notebook and helper scripts are stored in the public `Fit` repository on `main`.
 - Model weights are **not confirmed to be stored in GitHub**.
 - A copy of the weights has been made to the Google Drive folder above; post-copy file-level verification remains pending.
+
+
+## 2026-11-11 — Colab notebook updated for Drive-first model loading
+
+- Updated notebook: https://github.com/flowrian2026-max/Fit/blob/main/experiments/virtual-tryon/FIT_BY_FORM_FASHN_COLAB.ipynb
+- The notebook now mounts Google Drive before setup.
+- Persistent weights path: `/content/drive/MyDrive/Fit-Model-Weights/weights`.
+- If both `model.safetensors` and `dwpose/` are present in Drive, the notebook links the local `weights/` path to Drive and skips the ~2 GB download.
+- If Drive weights are absent, the notebook downloads weights once, copies them to Drive, and uses the local copy for that run.
+- Notebook update committed to `main`: `208f485e4f539cd97fcfd1acb0727f350282df7d`.
+- Remaining verification: run the updated notebook from a fresh Colab runtime and confirm it reports that it is using saved Google Drive weights. This verification has not yet been performed.
